@@ -1,7 +1,54 @@
 @import "tailwindcss";
 
+
+
+
+:root[data-theme='morning'] {
+  --bg-color: #1f96ba;
+  --text-color: #ffffff;
+  --card-color: #ffffff;
+  --accent-color: #f97316;
+  --infobox-color: #2fa960;
+  --infobox-border-color:#343e85;
+
+}
+
+:root[data-theme='day'] {
+  --bg-color: #4470aa;
+  --text-color: #111827;
+  --card-color: #ffffff;
+  --accent-color: #2563eb;
+  --infobox-color: #2fa93b;
+  --infobox-border-color:#343e85;
+
+}
+
+:root[data-theme='evening'] {
+  --bg-color: #312e81;
+  --text-color: #f8fafc;
+  --card-color: #4338ca;
+  --accent-color: #fb923c;
+  --infobox-color: #bbc31d;
+  --infobox-border-color:#343e85;
+
+}
+
+:root[data-theme='night'] {
+  --bg-color: #020617;
+  --text-color: #e5e7eb;
+  --card-color: #0f172a;
+  --accent-color: #38bdf8;
+  --infobox-color: #131c65;
+  --infobox-border-color:#343e85;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+* {
+  box-sizing: border-box;
 }

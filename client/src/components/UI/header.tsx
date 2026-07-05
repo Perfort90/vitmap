@@ -1,17 +1,19 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import "../../styles/Header.css"
+import { Button } from '@/components/ui/button';
+
 function Header() {
     return (
         <div className='Header'>
       <div className='info-section'>
-        <button>Меню</button>
-        <button>Карта</button>
-        <button>Подборки</button>
-        <button>Рекомендации</button>
-                <button>Рекомендации</button>
+        <Button>Меню</Button>
+        <Button>Карта</Button>
+        <Button>Подборки</Button>
+        <Button>Рекомендации</Button>
+        <Button>Рекомендации</Button>
         </div>
         <div>
-            <button>ЛОГОТИП</button>
+        <button>ЛОГОТИП</button>
         </div>
         </div>
     )

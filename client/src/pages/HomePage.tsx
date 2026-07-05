@@ -5,10 +5,11 @@ import "../styles/HomePage.css"
 function HomePage() {
     return (
         
-        <div className="canvas">
-            <div className="Header"></div>
-            <div className="Time"></div>
-            <div className="InfoBox"></div>
+        <div className="main">
+             <div className="Time">время</div>
+             <div className='wrapper'>
+            <div className="infoBox">Инфа</div>
+            </div>
 <h1>Главная</h1>
 
 

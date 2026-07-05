@@ -1,11 +1,25 @@
-.InfoBox {
-
+.main {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+ }
+.Time {
+  background-color: gray;
+  height: 5vh;
 }
 
-.main{
-
-}
-
-.time{
-    
-}
+.infoBox{
+  height: 60vh;
+  width: 60vh;
+  border: 4px solid;
+  border-color: var(--infobox-border-color);
+  border-radius: 15px;
+  background-color: var(--infobox-color);
+  padding: 5px;
+ }
+ 
+.wrapper{
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+ }

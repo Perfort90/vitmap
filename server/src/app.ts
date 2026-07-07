@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_req: Request, res: Response) => {
-  res.send('<h2>Привет Express!</h2>');
+  res.send('<h2>бэк воркает!</h2>');
 });
 
 app.use('/api', routes);

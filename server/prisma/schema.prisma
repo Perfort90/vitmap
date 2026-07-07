@@ -13,14 +13,22 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  rank String
-  name      String
-  places    Place[]
-  comments  Comment[]
-  ratings   Rating[]
-  createdAt DateTime @default(now())
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  rank         Rank     @default(BEGINNER)
+  name         String?
+  places       Place[]
+  comments     Comment[]
+  ratings      Rating[]
+  createdAt    DateTime @default(now())
+}
+
+enum Rank {
+  BEGINNER
+  INTERMEDIATE
+  PRO
+  MASTER
 }
 
 model Place {

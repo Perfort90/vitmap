@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import HomePage from './pages/HomePage';
 import Profile from "./pages/Profile"
 import Header from './components/ui/header';
-
+import Auth from './pages/Auth';
 
 
 
@@ -17,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path='/Auth' element={<Auth/>}/>
 
            </Routes>
         </Router>

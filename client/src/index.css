@@ -2,15 +2,21 @@
 
 
 
-
 :root[data-theme='morning'] {
   --bg-color: #1f96ba;
   --text-color: #ffffff;
   --card-color: #ffffff;
   --accent-color: #f97316;
   --infobox-color: #2fa960;
-  --infobox-border-color:#343e85;
+  --infobox-border-color: #343e85;
 
+  --info-gradient-1: rgba(255, 255, 255, 0.78);
+  --info-gradient-2: rgba(120, 220, 255, 0.42);
+  --info-gradient-3: rgba(47, 169, 96, 0.38);
+
+  --info-shadow-1: rgba(255, 255, 255, 0.18);
+  --info-shadow-2: rgba(31, 150, 186, 0.35);
+  --info-shadow-3: rgba(120, 220, 255, 0.3);
 }
 
 :root[data-theme='day'] {
@@ -18,9 +24,16 @@
   --text-color: #111827;
   --card-color: #ffffff;
   --accent-color: #2563eb;
-  --infobox-color: #2fa93b;
-  --infobox-border-color:#343e85;
+  --infobox-color: #17bd27;
+  --infobox-border-color: #343e85;
 
+  --info-gradient-1: rgba(255, 255, 255, 0.72);
+  --info-gradient-2: rgba(96, 204, 81, 0.36);
+  --info-gradient-3: rgba(68, 112, 170, 0.34);
+
+  --info-shadow-1: rgba(255, 255, 255, 0.16);
+  --info-shadow-2: rgba(37, 99, 235, 0.28);
+  --info-shadow-3: rgba(96, 204, 81, 0.28);
 }
 
 :root[data-theme='evening'] {
@@ -29,8 +42,15 @@
   --card-color: #4338ca;
   --accent-color: #fb923c;
   --infobox-color: #bbc31d;
-  --infobox-border-color:#343e85;
+  --infobox-border-color: #343e85;
 
+  --info-gradient-1: rgba(255, 255, 255, 0.44);
+  --info-gradient-2: rgba(251, 146, 60, 0.36);
+  --info-gradient-3: rgba(67, 56, 202, 0.46);
+
+  --info-shadow-1: rgba(255, 255, 255, 0.14);
+  --info-shadow-2: rgba(251, 146, 60, 0.32);
+  --info-shadow-3: rgba(67, 56, 202, 0.38);
 }
 
 :root[data-theme='night'] {
@@ -39,7 +59,15 @@
   --card-color: #0f172a;
   --accent-color: #38bdf8;
   --infobox-color: #131c65;
-  --infobox-border-color:#343e85;
+  --infobox-border-color: #343e85;
+
+  --info-gradient-1: rgba(255, 255, 255, 0.16);
+  --info-gradient-2: rgba(56, 189, 248, 0.2);
+  --info-gradient-3: rgba(19, 28, 101, 0.62);
+
+  --info-shadow-1: rgba(255, 255, 255, 0.1);
+  --info-shadow-2: rgba(56, 189, 248, 0.26);
+  --info-shadow-3: rgba(19, 28, 101, 0.48);
 }
 
 html,

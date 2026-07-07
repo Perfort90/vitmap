@@ -1,4 +1,3 @@
-import { Link, useLocation } from 'react-router-dom';
 import "../styles/HomePage.css"
 import { Typewriter } from 'react-simple-typewriter';
 import { Button } from '@/components/ui/button';

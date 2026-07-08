@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import { ZodError } from 'zod';
 import routes from './routes';
 
 const app = express();
@@ -20,6 +21,15 @@ app.use('/api', routes);
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Unhandled error:', err);
   res.status(500).json({ message: 'Внутренняя ошибка сервера' });
+
+  if (err instanceof ZodError) {
+  return res.status(400).json({
+    message: 'Ошибка валидации',
+    errors: err.issues,
+  });
+}
 });
+
+
 
 export default app;

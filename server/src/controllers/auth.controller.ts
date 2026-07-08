@@ -1,9 +1,11 @@
 import type { Request, Response, NextFunction } from 'express';
 import { loginUser, registerUser } from '../services/auth.service';
+import { loginSchema, registerSchema } from '../schemas/auth.schema';
 
 export async function register(req: Request, res: Response, next: NextFunction) {
   try {
-    const user = await registerUser(req.body);
+    const data = registerSchema.parse(req.body);  
+    const user = await registerUser(data);
 
     res.status(201).json(user);
   } catch (error) {
@@ -13,9 +15,10 @@ export async function register(req: Request, res: Response, next: NextFunction) 
 
 export async function login(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await loginUser(req.body);
+    const data = loginSchema.parse(req.body);  
+    const user = await loginUser(data);
 
-    res.json(result);
+    res.status(201).json(user);
   } catch (error) {
     next(error);
   }

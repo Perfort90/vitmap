@@ -25,7 +25,7 @@ function Auth() {
 
       console.log("Пользователь создан:", response.data);
       alert("Регистрация успешна");
-      navigate("/profile");
+      navigate(`/profile/${response.data.id}`);
     } catch (error) {
       console.error(error);
       alert("Ошибка регистрации");
@@ -47,7 +47,7 @@ function Auth() {
 
       console.log("успешный вход в аккаунт:", response.data);
       alert("Авторизация успешна");
-      navigate("/profile");
+      navigate(`/profile/${response.data.user.id}`);
     } catch (error) {
       console.error(error);
       alert("Ошибка авторизации");
@@ -89,15 +89,17 @@ function Auth() {
           placeholder="Введите пароль"
         />
 
-        <Button type="submit">
+        <Button type="submit"  variant="outline"
+  className="w-full whitespace-normal text-center leading-relaxed">
           {authMode === "register" ? "Зарегистрироваться" : "Войти"}
         </Button>
 
         <Button
           type="button"
-          variant="outline"
+            variant="outline"
+  className="w-full whitespace-normal text-center leading-relaxed"
           onClick={() => setAuthMode(authMode === "register" ? "login" : "register")}
-        >
+>
           {authMode === "register" ? "Уже есть аккаунт? Войти" : "Нет аккаунта? Зарегистрироваться"}
         </Button>
       </form>

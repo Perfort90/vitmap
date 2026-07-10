@@ -13,7 +13,7 @@ function Header() {
         <Button>Рекомендации</Button>
         </div>
         <div>
-        <button>ЛОГОТИП</button>
+        <button><Link to="/">Логотип</Link></button>
         </div>
         </div>
     )

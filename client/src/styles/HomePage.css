@@ -8,8 +8,8 @@
   height: 5vh;
 }
 .infoBox {
-  height: 60vh;
-  width: 60vh;
+  min-height: 60vh;
+  min-width: 60vh;
   padding: 24px;
   border-radius: 28px;
 

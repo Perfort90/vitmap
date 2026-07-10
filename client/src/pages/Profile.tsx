@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '@/api/api';
+import "../styles/HomePage.css";
+
 
 function Profile() {
   const { id } = useParams();
@@ -19,10 +21,12 @@ function Profile() {
   }
 
   return (
-    <div>
+    <div className='wrapper'>
+      <div className='infoBox'>
       <h1>Профиль</h1>
       <p>Имя: {profile.name}</p>
       <p>Ранг: {profile.rank}</p>
+      </div>
     </div>
   );
 }

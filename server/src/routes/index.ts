@@ -7,4 +7,5 @@ const router = Router();
 router.use('/auth', authRoutes);
 router.use(profileRoutes);
 
+
 export default router;

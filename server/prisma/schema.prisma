@@ -18,6 +18,7 @@ model User {
   passwordHash String
   rank         Rank     @default(BEGINNER)
   name         String?
+  avatarUrl    String?
   places       Place[]
   comments     Comment[]
   ratings      Rating[]

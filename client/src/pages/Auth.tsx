@@ -1,10 +1,9 @@
 import { type FormEvent, useState } from "react";
-import "../styles/HomePage.css";
-import { useNavigate } from 'react-router-dom';
-
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import api from "@/api/api";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import "../styles/HomePage.css";
 
 function Auth() {
   const [authMode, setAuthMode] = useState<"register" | "login">("register");
@@ -22,6 +21,8 @@ function Auth() {
         email,
         password,
       });
+
+      localStorage.setItem("user", JSON.stringify(response.data));
 
       console.log("Пользователь создан:", response.data);
       alert("Регистрация успешна");
@@ -45,6 +46,8 @@ function Auth() {
         localStorage.setItem("token", response.data.token);
       }
 
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
       console.log("успешный вход в аккаунт:", response.data);
       alert("Авторизация успешна");
       navigate(`/profile/${response.data.user.id}`);
@@ -53,9 +56,6 @@ function Auth() {
       alert("Ошибка авторизации");
     }
   }
-
-
-
 
   return (
     <div className="wrapper">
@@ -89,17 +89,20 @@ function Auth() {
           placeholder="Введите пароль"
         />
 
-        <Button type="submit"  variant="outline"
-  className="w-full whitespace-normal text-center leading-relaxed">
+        <Button
+          type="submit"
+          variant="outline"
+          className="w-full whitespace-normal text-center leading-relaxed"
+        >
           {authMode === "register" ? "Зарегистрироваться" : "Войти"}
         </Button>
 
         <Button
           type="button"
-            variant="outline"
-  className="w-full whitespace-normal text-center leading-relaxed"
+          variant="outline"
+          className="w-full whitespace-normal text-center leading-relaxed"
           onClick={() => setAuthMode(authMode === "register" ? "login" : "register")}
->
+        >
           {authMode === "register" ? "Уже есть аккаунт? Войти" : "Нет аккаунта? Зарегистрироваться"}
         </Button>
       </form>

@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { ZodError } from 'zod';
 import routes from './routes';
+import path from "node:path";
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.use('/api', routes);
-
+app.use("/uploads", express.static(path.resolve("server/uploads")));
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Unhandled error:', err);
   res.status(500).json({ message: 'Внутренняя ошибка сервера' });

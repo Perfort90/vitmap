@@ -1,8 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import {
   getProfileById,
-  updateProfileById,
-  updateUserAvatar,
+  updateProfileById
 } from '../services/profile.service';
 type ProfileParams = {
   id: string;
@@ -38,29 +37,16 @@ export async function updateMyProfile(
       return res.status(401).json({ message: 'Нет авторизации' });
     }
 
-    const updatedProfile = await updateProfileById(req.user.id, req.body);
+    const avatarUrl = req.file
+      ? `/uploads/avatars/${req.file.filename}`
+      : undefined;
+
+    const updatedProfile = await updateProfileById(req.user.id, {
+      name: req.body.name,
+      avatarUrl,
+    });
 
     res.json(updatedProfile);
-  } catch (error) {
-    next(error);
-  }
-}
-
-export async function updateMyAvatar(req: Request, res: Response, next: NextFunction) {
-  try {
-    if (!req.user) {
-      return res.status(401).json({ message: "Нет авторизации" });
-    }
-
-    if (!req.file) {
-      return res.status(400).json({ message: "Файл не загружен" });
-    }
-
-    const avatarUrl = `/uploads/avatars/${req.file.filename}`;
-
-    const updatedUser = await updateUserAvatar(req.user.id, avatarUrl);
-
-    res.json(updatedUser);
   } catch (error) {
     next(error);
   }

@@ -13,26 +13,19 @@ export async function getProfileById(id: string) {
   });
 }
 
-export async function updateProfileById(id: string, data: { name?: string }) {
+export async function updateProfileById(
+  id: string,
+  data: {
+    name?: string;
+    avatarUrl?: string;
+  }
+) {
   return prisma.user.update({
     where: { id },
     data: {
       name: data.name,
+      avatarUrl: data.avatarUrl,
     },
-    select: {
-      id: true,
-      name: true,
-      rank: true,
-      avatarUrl: true,
-      createdAt: true,
-    },
-  });
-}
-
-export async function updateUserAvatar(userId: string, avatarUrl: string) {
-  return prisma.user.update({
-    where: { id: userId },
-    data: { avatarUrl },
     select: {
       id: true,
       name: true,

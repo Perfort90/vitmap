@@ -43,7 +43,8 @@ export async function updateMyProfile(
 
     const updatedProfile = await updateProfileById(req.user.id, {
       name: req.body.name,
-      avatarUrl,
+description: req.body.description,
+avatarUrl,
     });
 
     res.json(updatedProfile);

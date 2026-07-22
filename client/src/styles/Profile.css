@@ -68,3 +68,9 @@
   align-items: center;
   justify-content: center;
 }
+
+input {
+  border-color: black;
+  border: 3px solid;
+  border-radius: 10px;
+}

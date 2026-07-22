@@ -5,6 +5,7 @@ export async function getProfileById(id: string) {
     where: { id },
     select: {
       id: true,
+      description: true, 
       name: true,
       rank: true,
       avatarUrl: true,
@@ -17,6 +18,7 @@ export async function updateProfileById(
   id: string,
   data: {
     name?: string;
+    description?:string;
     avatarUrl?: string;
   }
 ) {
@@ -24,6 +26,7 @@ export async function updateProfileById(
     where: { id },
     data: {
       name: data.name,
+      description:data.description,
       avatarUrl: data.avatarUrl,
     },
     select: {
@@ -31,6 +34,7 @@ export async function updateProfileById(
       name: true,
       rank: true,
       avatarUrl: true,
+      description:true,
       createdAt: true,
     },
   });

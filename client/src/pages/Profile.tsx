@@ -8,6 +8,7 @@ import "../styles/Profile.css";
 
 type ProfileData = {
   id: string;
+  description: string | null;
   name: string | null;
   rank: string;
   avatarUrl: string | null;

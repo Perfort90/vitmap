@@ -3,6 +3,7 @@ type ProfileViewProps = {
     id: string;
     name: string | null;
     rank: string;
+description: string | null;
     avatarUrl: string | null;
     createdAt: string;
   };
@@ -33,8 +34,8 @@ export function ProfileView({ profile, isOwner, onEdit }: ProfileViewProps) {
       </div>
 
       <div className="profileCard bioBlock">
-        Описание профиля
-      </div>
+  {profile.description || "Описание профиля пока не добавлено"}
+</div>
 
       <div className="profileCard statsBlock">
         Статистика

@@ -8,6 +8,7 @@ type ProfileEditFormProps = {
     rank: string;
     avatarUrl: string | null;
     createdAt: string;
+description: string | null;
   };
   onCancel: () => void;
   onSaved: (profile: any) => void;
@@ -15,6 +16,7 @@ type ProfileEditFormProps = {
 
 export function ProfileEditForm({ profile, onCancel, onSaved }: ProfileEditFormProps) {
 
+const [description, setDescription] = useState(profile.description ?? "");
   const [name, setName] = useState(profile.name ?? "");
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
 
@@ -24,7 +26,7 @@ export function ProfileEditForm({ profile, onCancel, onSaved }: ProfileEditFormP
   const formData = new FormData();
 
   formData.append("name", name);
-
+formData.append("description", description);
   if (avatarFile) {
     formData.append("avatar", avatarFile);
   }
@@ -74,7 +76,10 @@ export function ProfileEditForm({ profile, onCancel, onSaved }: ProfileEditFormP
 
       <div className="profileCard bioBlock">
         Описание профиля
-      </div>
+<textarea
+  value={description}
+  onChange={(event) => setDescription(event.target.value)}
+/>      </div>
 
       <div className="profileCard statsBlock">
         Статистика

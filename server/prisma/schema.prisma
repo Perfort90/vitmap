@@ -16,6 +16,7 @@ model User {
   id           String   @id @default(uuid())
   email        String   @unique
   passwordHash String
+  description String  @default("здесь пока ничего нет")
   rank         Rank     @default(BEGINNER)
   name         String?
   avatarUrl    String?
